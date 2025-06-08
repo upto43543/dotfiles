@@ -1,9 +1,5 @@
 #!/bin/bash
 
-echo "[INFO] Codespace запущен, выполняем скрипт…" >> ~/codespace.log
-
-# ПИНГ в Google (или любой другой способ имитировать активность)
-curl -s https://google.com > /dev/null
-
-# Можно запускать любой твой скрипт
-# bash my_script.sh &
+# Запустить HTTP-сервер на 8000 порту (Python)
+echo "[INFO] Запуск HTTP-сервера на 8000 порту…" >> ~/codespace.log
+nohup python3 -m http.server 8000 --bind 0.0.0.0 > ~/http.log 2>&1 &
